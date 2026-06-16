@@ -1,0 +1,34 @@
+<div class="page">
+
+  <div class="card-container">
+
+    <div class="id-card" *ngFor="let student of students">
+        
+
+            <!-- Header -->
+            <div class="card-header">
+                <img [src]="student.collegeLogo" class="college-logo">
+                <h2>Sree Saraswathi Thyagaraja College</h2>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body">
+
+                <img [src]="student.studentPhoto" class="student-photo">
+
+                <div class="details">
+                <p><b>Name:</b> {{ student.studentName }}</p>
+                <p><b>Roll No:</b> {{ student.rollNumber }}</p>
+                <p><b>Dept:</b> {{ student.department }}</p>
+                <p><b>Year:</b> {{ student.year }}</p>
+                <p><b>Mobile:</b> {{ student.mobileNumber }}</p>
+                </div>
+                <button (click)="deleteStudent(student.rollNumber)">Delete</button>
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

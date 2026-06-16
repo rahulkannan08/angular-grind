@@ -1,0 +1,68 @@
+.id-card {
+  width: 320px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin: 20px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: white;
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  flex-wrap: wrap;          /* multiple cards go next line */
+  gap: 20px;                /* space between cards */
+  padding: 20px;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f8;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+/* Header */
+.card-header {
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.college-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+/* Body */
+.card-body {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+.student-photo {
+  width: 90px;
+  height: 110px;
+  object-fit: cover;
+  border: 2px solid #333;
+  border-radius: 6px;
+}
+
+.details {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+body {
+  background: #082746;
+}

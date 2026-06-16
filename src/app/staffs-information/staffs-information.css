@@ -1,0 +1,55 @@
+/* <div>
+
+    <!-- to display the stafffs details -->
+    <div class="staffs-container">
+        <h2>Staffs Information</h2>
+        <table class="staffs-table">
+            <thead>
+                <tr class="staffs-table-header">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody class="staffs-table-body">
+                <tr *ngFor="let staff of staffs">
+                    <td>{{ staff.id }}</td>
+                    <td>{{ staff.name }}</td>
+                    <td>{{ staff.salary }}</td>
+                </tr>
+            </tbody>
+        </table>
+</div> */
+
+#staff-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#staff-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+#staff-table th, #staff-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+#staff-table th {
+    background-color: #1e3a8a;
+    color: white;
+}
+#staff-table-header {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+#staff-table-body tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+

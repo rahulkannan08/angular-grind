@@ -1,0 +1,22 @@
+<div>
+
+    <!-- to display the stafffs details -->
+    <div class="staffs-container">
+        <h2>Staffs Information</h2>
+        <table class="staffs-table">
+            <thead>
+                <tr class="staffs-table-header">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody class="staffs-table-body">
+                <tr *ngFor="let staff of staffs">
+                    <td>{{ staff.id }}</td>
+                    <td>{{ staff.name }}</td>
+                    <td>{{ staff.salary }}</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
