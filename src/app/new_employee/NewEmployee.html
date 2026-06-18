@@ -1,0 +1,28 @@
+<div>
+    <h1>New Employee Registration</h1>
+    <p>{{ employeename }}</p>
+    <input
+        type="text"
+        placeholder="Employee Name"
+        [(ngModel)]="employeename">
+        <button (click)="register()">
+            Register
+        </button>
+        <p> {{ sucessMessage }}</p>
+            <p>Employee LIST: </p>
+        <div *ngFor="let emp of employ; let i = index">
+           
+            <p>ID : {{ i + 1 }}. NAME : {{ emp.name }}</p>
+            
+        </div>
+
+    </div>
+
+
+<button (click)="toggleButton()">{{isdisabled ? 'Enable' : 'Disable'}} SUBMIT BUTTON</button>
+
+
+<button [disabled]="isdisabled" (click)="showMessage()"> Submit</button>
+<button (click)="message = ''"> Clear </button>
+
+<p *ngIf="message" style="color: green;">{{ message }}</p>

@@ -7,11 +7,12 @@ import { Employee } from './models/employee.model';
 
 import { StudentIdCardComponent } from './student-id-card/student-id-card';
 import { Aluminii } from "./alumini/alumini";
+import { NewEmployee } from './new_employee/NewEmployee';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, StudentIdCardComponent, Aluminii],
+  imports: [CommonModule, FormsModule, StudentIdCardComponent, Aluminii, NewEmployee],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
