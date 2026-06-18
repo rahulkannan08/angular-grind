@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class StudentIdCardComponent {
   students: Student[] = [{
-    collegeLogo: 'assets/logos/stc.png',
+    collegeLogo: 'assets/logos/cambridge.png',
     studentPhoto: 'assets/students/student1.png',
     studentName: 'John Doe',
     rollNumber: '123456',
@@ -20,7 +20,7 @@ export class StudentIdCardComponent {
     mobileNumber: '123-456-7890'
   },
     {
-        collegeLogo: 'assets/logos/stc.png',
+        collegeLogo: 'assets/logos/cambridge.png',
         studentPhoto: 'assets/students/student2.png',
         studentName: 'smith',
         rollNumber: '123457',
@@ -29,7 +29,7 @@ export class StudentIdCardComponent {
         mobileNumber: '123-456-7234' 
     },
     {
-        collegeLogo: 'assets/logos/stc.png',
+        collegeLogo: 'assets/logos/cambridge.png',
         studentPhoto: 'assets/students/student3.png',
         studentName: 'jane',        
         rollNumber: '123458',
@@ -48,7 +48,3 @@ export class StudentIdCardComponent {
   console.log('UPDATED LIST:', this.students);
 }
 }
-
-
-
-

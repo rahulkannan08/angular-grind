@@ -1,5 +1,6 @@
-export interface employeeDetails {
-    id: number;
-    name: string;
-    salary: number;
+export interface Employee {
+  id: number;
+  name: string;
+  department: string;
+  salary: number;
 }

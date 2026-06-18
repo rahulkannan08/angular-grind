@@ -1,34 +1,85 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {  StudentIdCardComponent } from './student-id-card/student-id-card';
-import { StaffsInformation } from  './staffs-information/staffs-information';
-import { Employee } from './employee/emloyeee';
-import { EmployeeService } from './employee/employeeService';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
+import { EmployeeService } from './services/employee.service';
+import { Employee } from './models/employee.model';
 
-const employeeService = new EmployeeService();
-
-
-const emp1 = new Employee(1, 'John Doe', 'IT', 50000);
-const emp2 = new Employee(2, 'Jane Smith', 'HR', 60000);  
-employeeService.addEmployee(emp1);
-employeeService.addEmployee(emp2);
-employeeService.updateEmployee(1, 'John Doe', 'IT', 55000);
-employeeService.displayEmployees();
-
-
-employeeService.updateEmployee(2, 'Non Existent', 'Finance', 70000);
-
-employeeService.displayEmployees();
+import { StudentIdCardComponent } from './student-id-card/student-id-card';
+import { Aluminii } from "./alumini/alumini";
 
 @Component({
   selector: 'app-root',
-  imports: [StudentIdCardComponent, StaffsInformation],
+  standalone: true,
+  imports: [CommonModule, FormsModule, StudentIdCardComponent, Aluminii],
   templateUrl: './app.html',
-  styleUrl: './app.css',
-  standalone: true
+  styleUrls: ['./app.css']
 })
 export class App {
-  protected readonly title = signal('student-management');
+
+
+  employees: Employee[] = [];
+
+  employee: Employee = {
+    id: 0,
+    name: '',
+    department: '',
+    salary: 0
+  };
+
+  isEditMode = false;
+
+  constructor(private employeeService: EmployeeService) {
+    this.loadEmployees();
+  }
+
+  loadEmployees(): void {
+    this.employees = (this.employeeService as any).getEmployees?.() ?? [];
+  }
+
+  addEmployee(): void {
+    // helper: prevent duplicate submit causing unexpected UI issues
+
+    if (this.isEditMode) {
+      this.employeeService.updateEmployee(this.employee);
+
+      this.isEditMode = false;
+    } else {
+      this.employeeService.addEmployee(this.employee);
+    }
+
+    this.resetForm();
+    this.loadEmployees();
+  }
+
+
+  editEmployee(emp: Employee): void {
+
+    this.employee = {
+      ...emp
+    };
+
+    this.isEditMode = true;
+  }
+
+  deleteEmployee(id: number): void {
+
+    (this.employeeService as any).deleteEmployee?.(id);
+
+    this.loadEmployees();
+  }
+
+  calculateBonus(salary: number): number {
+    return (this.employeeService as any).calculateBonus?.(salary) ?? 0;
+  }
+
+  resetForm(): void {
+
+    this.employee = {
+      id: 0,
+      name: '',
+      department: '',
+      salary: 0
+    };
+  }
 }
-//  

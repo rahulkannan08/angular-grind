@@ -1,10 +1,10 @@
 
-    <div id="student-management-system">
+<div id="student-management-system">
   <h1>Student Management System</h1>
   <p>Created by Rahul</p>
 
-  <app-student-id-card></app-student-id-card>
-
+  
+  
   <div id="description-of-files-and-folders">
     <h2>Description of Files and Folders</h2>
 
@@ -16,6 +16,91 @@
     <p>package.json - Contains project dependencies and npm scripts.</p>
     <p>angular.json - Stores Angular workspace and build configuration.</p>
   </div>
-  <app-staffs-information></app-staffs-information>
+  <div id="staffs-information-placeholder"></div>
 </div>
 
+<h1>Employee Management System</h1>
+
+<form (ngSubmit)="addEmployee()">
+
+  <input
+    type="number"
+    placeholder="Employee ID"
+    [(ngModel)]="employee.id"
+    name="id"
+  >
+
+  <input
+    type="text"
+    placeholder="Employee Name"
+    [(ngModel)]="employee.name"
+    name="name"
+  >
+
+  <input
+    type="text"
+    placeholder="Department"
+    [(ngModel)]="employee.department"
+    name="department"
+  >
+
+  <input
+    type="number"
+    placeholder="Salary"
+    [(ngModel)]="employee.salary"
+    name="salary"
+  >
+
+  <button type="submit">
+    {{ isEditMode ? 'Update Employee' : 'Add Employee' }}
+  </button>
+
+</form>
+
+<hr>
+
+<table border="1">
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Salary</th>
+      <th>Bonus</th>
+      <th>Actions</th>
+    </tr>
+
+    <tbody>
+      <tr *ngFor="let emp of employees">
+
+    <td>{{ emp.id }}</td>
+
+
+    <td>{{ emp.name }}</td>
+
+    <td>{{ emp.department }}</td>
+
+    <td>{{ emp.salary }}</td>
+
+    <td>{{ calculateBonus(emp.salary) }}</td>
+
+    <td>
+
+      <button (click)="editEmployee(emp)">
+        Edit
+      </button>
+
+      <button (click)="deleteEmployee(emp.id)">
+        Delete
+      </button>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<hr>
+<app-alumini></app-alumini>
+<app-student-id-card></app-student-id-card>

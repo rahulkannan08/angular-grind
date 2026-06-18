@@ -1,0 +1,10 @@
+<div>
+    <h2>Alumni</h2>
+    <ul>
+        @for (alumini of aluminis; track alumini) {
+            <li>
+                <strong>{{ alumini.name }}</strong> - {{ alumini.department }} ({{ alumini.yearOfPassing }})
+            </li>
+        }
+    </ul>
+</div>
