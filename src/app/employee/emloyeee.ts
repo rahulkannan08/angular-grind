@@ -12,4 +12,3 @@ export class Employee implements EmployeeDetails {
         return this.salary * 0.1; // Example bonus calculation (10% of salary) 
     }
 }
-

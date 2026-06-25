@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Salary</th>
+    <th>Bonus</th>
+  </tr>
+
+  <tr *ngFor="let emp of employees">
+    <td>{{emp.id}}</td>
+    <td>{{emp.name}}</td>
+    <td>{{emp.department}}</td>
+    <td>{{emp.salary}}</td>
+    <td>{{emp.salary * 0.1}}</td>
+  </tr>
+</table>

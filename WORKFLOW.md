@@ -27,7 +27,7 @@ This document explains the **full flow from UI → component logic → service/s
   - Standalone `StudentIdCardComponent`
   - Holds `students: Student[]` (in-memory data)
   - Implements `deleteStudent(rollNumber)`
-
+    
 - **`src/app/student-id-card/student-id-card.html`**
   - Renders student cards with `*ngFor`
   - Delete button triggers `(click)="deleteStudent(student.rollNumber)"`

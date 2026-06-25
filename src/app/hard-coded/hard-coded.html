@@ -1,0 +1,22 @@
+<p>hard-coded works!</p>
+
+<p>  {{ this.not_a_name }} </p>
+
+<img [src]="not_a_img" alt="property binding" />
+
+<button [disabled]="isNotWorking" (click)="isNotWorking = true" id="disableButton"> This button is disabled once it enabled and once you clikc that button will disabled</button>
+<button [disabled]="!isNotWorking" (click)="isNotWorking = false" id="enableButton"> when you click this that will enable it </button>
+
+
+<button (click)="showmsg()" id="alertButton"> CLIKC FOR ALERT BOX</button>
+
+<br>
+
+<button (click)="showpopup()" id="popupButton">POPUP</button>
+
+<!-- Popup (shown/hidden using isPopupVisible) -->
+<div *ngIf="isPopupVisible" class="popup">
+  <h2>Hardcoded Component</h2>
+  <p>This is a hardcoded component with static content.</p>
+  <button (click)="isPopupVisible = false">Close</button>
+</div>

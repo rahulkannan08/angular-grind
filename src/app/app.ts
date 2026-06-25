@@ -8,11 +8,12 @@ import { Employee } from './models/employee.model';
 import { StudentIdCardComponent } from './student-id-card/student-id-card';
 import { Aluminii } from "./alumini/alumini";
 import { NewEmployee } from './new_employee/NewEmployee';
+import { HardCoded } from './hard-coded/hard-coded';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, StudentIdCardComponent, Aluminii, NewEmployee],
+  imports: [CommonModule, FormsModule, StudentIdCardComponent, Aluminii, NewEmployee, HardCoded],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

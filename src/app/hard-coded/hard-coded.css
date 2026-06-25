@@ -1,0 +1,57 @@
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(227, 24, 24, 0.1);
+    padding: 10px 20px;
+    border: none;   
+    background-color: #e31818;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+        background-color: #3cff00;
+        color: black;
+    }
+    inline-size: 100%;
+}
+
+#alertButton {
+    background-color: #1858e3;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        background-color: #3cff00;
+        color: rgb(242, 4, 4);
+    }
+}
+
+#disableButton {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    &:hover {
+        background-color: #ccc;
+        color: #666;
+    }
+}
+
+#enableButton {
+    background-color: #e31818;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        background-color: #3cff00;
+        color: black;
+    }
+}
+

@@ -38,8 +38,4 @@ export class NewEmployee {
     showMessage() {
         this.message = 'Button Clicked!';
     }
-
-   
-
-
 }
